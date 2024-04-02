@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Nancy Assignment04</title>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pop-up.css">
+
+    <script src="scripts/jquery-3.7.0.min.js" defer></script>
+    <script src="scripts/diceGame.js" defer></script>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <header class="header">
+            <h1>Dice Game</h1>
+        </header>
+        <main>
+            <h1 id="gameResult">Dice Game</h1>
+            <div class="gridboxed">
+                <section id="playerComputer">
+                    <p id="computer_TotalScore"></p>
+                    <p id="computer_CurrentScore"></p>
+                    <ul>
+                        <li>
+                            <p id="computer_Dice1_text"></p>
+                            <img src="images/dice-1.png" id="computer_Dice1_img" class="diceImage">
+                        </li>
+                        <li>
+                            <p id="computer_Dice2_text"></p>
+                            <img src="images/dice-1.png" id="computer_Dice2_img" class="diceImage">
+                        </li>
+                    </ul>
+                </section>
+                
+                <section id="player">
+                    <p id="player_TotalScore"></p>
+                    <p id="player_CurrentScore"></p>
+                    <ul>
+                        <li>
+                            <p id="player_Dice1_text"></p>
+                            <img src="images/dice-1.png" id="player_Dice1_img" class="diceImage">
+                        </li>
+                        <li>
+                            <p id="player_Dice2_text"></p>
+                            <img src="images/dice-1.png" id="player_Dice2_img" class="diceImage">
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div>
+                <br>
+                <button type="button" id="newGameBtn">NewGame</button>
+                <button type="button" id="rollBtn">Roll</button>
+                <br><br><br><br><br>
+            </div>
+
+            
+        </main>
+
+
+
+        <footer class="footer">
+            <p>
+                Copyright @XUEYA YANG - COMP2132
+            </p>
+        </footer>
+
+    </div>
+</body>
+
+</html>

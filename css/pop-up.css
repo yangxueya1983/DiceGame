@@ -1,0 +1,130 @@
+
+@import url("style.css");
+
+
+.formBox {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    width: 480px; 
+    margin: 0 auto;
+    /*float: left;*/
+}
+.formBox label {
+    display: inline-block;
+    width: 90px; 
+    margin-right: 10px; 
+    text-align: left; 
+}
+.formBox input, select {
+    display: inline-block;
+    width: 200px; 
+    margin-left: 0px; 
+    text-align: left; 
+}
+
+.showHideButton {
+    display: inline-block;
+    height: 20px;
+    width: 60px;
+    position: absolute;
+    top: 16%;
+    left: 240px;
+}
+
+.info-container {
+    position: relative;
+    display: inline-block;
+}
+
+.info-icon {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 16%;
+    left: 280px;
+    z-index: 10000;
+}
+
+.info-popUp {
+    position: absolute;
+    bottom: 30px;
+    right: -200px;
+    width: 200px;
+    background-color: var(--theme-color);
+    color: white;
+    border: 1px solid var(--second-color);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10000;
+    display: none;
+}
+
+.info-container:hover .info-popUp {
+    display: block;
+}
+
+.info-image {
+    width: 20px; 
+    height: 20px;
+}
+
+/*
+input {
+    border: 0.5px solid black; 
+}*/
+
+
+.highlighted {
+    border: 1px solid var(--theme-color); 
+}
+
+
+
+#pop-up{
+    display: none;
+    opacity:0;
+    position:fixed;
+    top:0px;
+    left:0px;    
+    width:100vw;
+    height:100vh;    
+	z-index:1000;
+	background-color: rgba(0, 0, 0, .8);        
+	font-size:.85em;
+}
+#pop-up h2{
+    text-align: center;
+}
+#pop-up div{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%, -50%);
+	max-width:400px;
+	min-width:300px;
+	padding:10px;
+	border-radius:10px;
+	background-color: var(--theme-color);
+	color:white;
+}
+
+#pop-up-close{
+	background-color: white;
+	border-radius: 50%;
+	font-weight: bold;
+	border:solid 1px var(--theme-color);
+	cursor:pointer;
+	position:absolute;
+	top:-10px;
+	right:-10px;
+}
+#pop-up-close:hover, 
+#pop-up-close:focus, 
+#pop-up-close:active{
+	background-color: var(--theme-color);
+	color:white;
+	transform: scale(1.3);
+}
