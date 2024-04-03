@@ -17,6 +17,7 @@ const $computer_CurrentScore    = $("#computer_CurrentScore")
 const $player_TotalScore        = $("#player_TotalScore")
 const $player_CurrentScore      = $("#player_CurrentScore")
 
+const $faceImg = $("#faceImg")
 
 const maxNumberOfRound = 3
 let roundCount = 0
@@ -118,6 +119,7 @@ $("#newGameBtn").click(function(){
     updateUI()
     $("#gameResult").text("Enjoy Game")
     $("#rollBtn").prop("disabled", false)
+    $faceImg.prop("src", "images/cool.png");
 })
 $("#rollBtn").click(function(){
     
@@ -130,16 +132,20 @@ $("#rollBtn").click(function(){
         $("#gameResult").text(`Round ${roundCount}`)
     } else {
         let resultText = ""
+        let imgSrc = "images/happy.png"
         if (player.totalScore > playerComputer.totalScore) {// player win
             resultText = "You win"
         } else if (player.totalScore == playerComputer.totalScore) {// same
             resultText = "Both win"
         } else {
             resultText = "Computer win"
+            imgSrc = "images/sad.png"
         }
         $("#gameResult").text(resultText)
 
         $("#rollBtn").prop("disabled", true)
+
+        $faceImg.prop("src", imgSrc);
     }
     updateUI()
 })
