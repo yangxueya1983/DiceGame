@@ -7,8 +7,11 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pop-up.css">
+    
 
     <script src="scripts/jquery-3.7.0.min.js" defer></script>
     <script src="scripts/diceGame.js" defer></script>
@@ -21,45 +24,47 @@
             <h1>Dice Game</h1>
         </header>
         <main>
-            <h1 id="gameResult">Dice Game</h1>
+            <h1 style="text-align: center;" id="gameResult">Welcome!</h1>
             <div class="gridboxed">
                 <section id="playerComputer">
-                    <p id="computer_TotalScore"></p>
-                    <p id="computer_CurrentScore"></p>
-                    <ul>
-                        <li>
-                            <p id="computer_Dice1_text"></p>
-                            <img src="images/dice-1.png" id="computer_Dice1_img" class="diceImage">
-                        </li>
-                        <li>
-                            <p id="computer_Dice2_text"></p>
-                            <img src="images/dice-1.png" id="computer_Dice2_img" class="diceImage">
-                        </li>
-                    </ul>
+                    <div>
+                        <p>Computer</p>
+                        <p id="computer_TotalScore"></p>
+                        <p id="computer_CurrentScore"></p>
+                        <p id="computer_Dice_text"></p>
+                    </div>
+                    
+                    <div id="dicePanel">
+                        <img src="images/dice-1.png" id="computer_Dice1_img" class="diceImage">
+                        <img src="images/dice-1.png" id="computer_Dice2_img" class="diceImage">
+                    </div>
                 </section>
                 
                 <section id="player">
-                    <p id="player_TotalScore"></p>
-                    <p id="player_CurrentScore"></p>
-                    <ul>
-                        <li>
-                            <p id="player_Dice1_text"></p>
-                            <img src="images/dice-1.png" id="player_Dice1_img" class="diceImage">
-                        </li>
-                        <li>
-                            <p id="player_Dice2_text"></p>
-                            <img src="images/dice-1.png" id="player_Dice2_img" class="diceImage">
-                        </li>
-                    </ul>
+                    <div>
+                        <p>You</p>
+                        <p id="player_TotalScore"></p>
+                        <p id="player_CurrentScore"></p>
+                        <p id="player_Dice_text"></p>
+                    </div>
+                    
+                    <div id="dicePanel">
+                        <img src="images/dice-1.png" id="player_Dice1_img" class="diceImage">
+                        <img src="images/dice-1.png" id="player_Dice2_img" class="diceImage">
+                    </div>
                 </section>
             </div>
-            <div>
-                <br>
-                <button type="button" id="newGameBtn">NewGame</button>
+            <div style="text-align: center;">
+                <br><br>
+                <button type="button" id="newGameBtn" style="margin-right: 100px;">NewGame</button>
                 <button type="button" id="rollBtn">Roll</button>
+                <br><br><br>
+            </div>
+            <div style="text-align: center;">
+                <br><br>
+                <button type="button" id="tipBtn">Play Rules</button>
                 <br><br><br><br><br>
             </div>
-
             
         </main>
 

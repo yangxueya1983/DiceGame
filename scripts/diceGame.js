@@ -6,9 +6,9 @@ const $computer_Dice2_img   = $("#computer_Dice2_img")
 const $player_Dice1_img     = $("#player_Dice1_img")
 const $player_Dice2_img     = $("#player_Dice2_img")
 
-const $computer_Dice1_text  = $("#computer_Dice1_text")
+const $computer_Dice_text  = $("#computer_Dice_text")
 const $computer_Dice2_text  = $("#computer_Dice2_text")
-const $player_Dice1_text    = $("#player_Dice1_text")
+const $player_Dice_text    = $("#player_Dice_text")
 const $player_Dice2_text    = $("#player_Dice2_text")
 
 
@@ -75,24 +75,27 @@ class DicePlayer {
 
     reset(){
         this.totalScore = 0
+        let d1 = new Dice(1)
+        let d2 = new Dice(1)
+
+        this.dices = [d1, d2]
     }
 }
 
 let playerComputer = new DicePlayer("Computer")
-let player = new DicePlayer("Player")
+let player = new DicePlayer("Nancy")
 
 
 function updateUI() {
 
-    $computer_CurrentScore.text(`${playerComputer.getScore()}`)
+    $computer_CurrentScore.text(`Current Score: ${playerComputer.getScore()}`)
     $computer_TotalScore.text(`Total Score: ${playerComputer.totalScore}`)
-    $player_CurrentScore.text(`${player.getScore()}`)
+    $player_CurrentScore.text(`Current Score: ${player.getScore()}`)
     $player_TotalScore.text(`Total Score: ${player.totalScore}`)
 
-    $computer_Dice1_text.text(`${playerComputer.dices[0].diceValue}`)
-    $computer_Dice2_text.text(`${playerComputer.dices[1].diceValue}`)
-    $player_Dice1_text.text(`${player.dices[0].diceValue}`)
-    $player_Dice2_text.text(`${player.dices[1].diceValue}`)
+    $computer_Dice_text.text(`${playerComputer.dices[0].diceValue} + ${playerComputer.dices[1].diceValue} = ${playerComputer.getScore()}`)
+    $player_Dice_text.text(`${player.dices[0].diceValue} + ${player.dices[1].diceValue} = ${player.getScore()}`)
+
 
     $computer_Dice1_img.prop("src", playerComputer.dices[0].imageSrc);
     $computer_Dice2_img.prop("src", playerComputer.dices[1].imageSrc);
@@ -103,7 +106,9 @@ function updateUI() {
      
 }
 
+$("#gameResult").text(`Welcome ${player.name} !`)
 
+updateUI()
 
 
 $("#newGameBtn").click(function(){
@@ -112,14 +117,16 @@ $("#newGameBtn").click(function(){
     roundCount = 0
     updateUI()
     $("#gameResult").text("Enjoy Game")
+    $("#rollBtn").prop("disabled", false)
 })
 $("#rollBtn").click(function(){
-    if (roundCount < maxNumberOfRound-1) {
-        playerComputer.roll()
-        player.roll()
-        updateUI()
-
-        roundCount ++
+    
+    playerComputer.roll()
+    player.roll()
+    roundCount ++
+    
+   // console.log(`${roundCount}`)
+    if (roundCount < maxNumberOfRound) {
         $("#gameResult").text(`Round ${roundCount}`)
     } else {
         let resultText = ""
@@ -131,7 +138,12 @@ $("#rollBtn").click(function(){
             resultText = "Computer win"
         }
         $("#gameResult").text(resultText)
-        
+
+        $("#rollBtn").prop("disabled", true)
     }
-    
+    updateUI()
+})
+
+$("#tipBtn").click(function(){
+
 })
