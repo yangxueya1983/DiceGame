@@ -230,6 +230,19 @@ pre code{
     margin-left: 20px;
 }
 
+#pop-up{
+    opacity:0;   
+	background-color: $accent_color;        
+	font-size:.85em;
+    border:solid 1px black;
+    border-radius: 7px;
+    width:auto;
+    padding:8px;
+    position: absolute;
+}
+#pop-up h2{
+    text-align: center;
+}
 
 #wrapper {
     max-width: 800px;

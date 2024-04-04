@@ -150,6 +150,13 @@ $("#rollBtn").click(function(){
     updateUI()
 })
 
-$("#tipBtn").click(function(){
-
+$("#infoBtn").mouseover(function(){
+    $("#pop-up").fadeIn()
+    console.log("mouseover")
+    //$("#pop-up").animate({visibility: 'visible', opacity: '1.0'});
+})
+$("#infoBtn").mouseout(function(){
+    $("#pop-up").fadeOut();
+    console.log("mouseout")
+    //$("#pop-up").animate({opacity: '0'});
 })

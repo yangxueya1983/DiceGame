@@ -241,6 +241,25 @@ pre code {
   margin-left: 20px;
 }
 
+#pop-up {
+  display: none;
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(222, 90, 67);
+  font-size: 0.85em;
+  border: solid 1px black;
+  border-radius: 7px;
+  width: 700px;
+  padding: 8px;
+  color: white;
+}
+
+#pop-up h2 {
+  text-align: center;
+}
+
 #wrapper {
   max-width: 800px;
   margin: 0 auto;
