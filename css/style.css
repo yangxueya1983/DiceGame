@@ -260,6 +260,28 @@ pre code {
   text-align: center;
 }
 
+.button-bg {
+  background-color: transparent;
+  background-image: url("../images/btnGround.png");
+  background-size: cover;
+  background-position: center;
+  width: 140px;
+  height: 38px;
+  border: none;
+  color: rgb(222, 90, 67);
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.enlarged {
+  transform: scale(1.1);
+}
+
+.button-bg.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 #wrapper {
   max-width: 800px;
   margin: 0 auto;

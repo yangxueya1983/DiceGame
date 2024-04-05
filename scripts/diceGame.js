@@ -19,6 +19,9 @@ const $player_CurrentScore      = $("#player_CurrentScore")
 
 const $faceImg = $("#faceImg")
 
+const $newGameBtn = $("#newGameBtn")
+const $rollBtn = $("#rollBtn")
+
 const maxNumberOfRound = 3
 let roundCount = 0
 
@@ -112,17 +115,32 @@ $("#gameResult").text(`Welcome ${player.name} !`)
 updateUI()
 
 
-$("#newGameBtn").click(function(){
+
+$newGameBtn.mouseover(function(){
+    $(this).addClass("enlarged")
+})
+$newGameBtn.mouseout(function(){
+    $(this).removeClass("enlarged")
+})
+$newGameBtn.click(function(){
+    $(this).removeClass("enlarged")
     playerComputer.reset()
     player.reset()
     roundCount = 0
     updateUI()
     $("#gameResult").text("Enjoy Game")
-    $("#rollBtn").prop("disabled", false)
+    $("#rollBtn").prop("disabled", false).removeClass('disabled');
     $faceImg.prop("src", "images/cool.png");
 })
-$("#rollBtn").click(function(){
-    
+
+$rollBtn.mouseover(function(){
+    $(this).addClass("enlarged")
+})
+$rollBtn.mouseout(function(){
+    $(this).removeClass("enlarged")
+})
+$rollBtn.click(function(){
+    $(this).removeClass("enlarged")
     playerComputer.roll()
     player.roll()
     roundCount ++
@@ -143,7 +161,7 @@ $("#rollBtn").click(function(){
         }
         $("#gameResult").text(resultText)
 
-        $("#rollBtn").prop("disabled", true)
+        $("#rollBtn").prop("disabled", true).addClass('disabled');
 
         $faceImg.prop("src", imgSrc);
     }
@@ -152,11 +170,7 @@ $("#rollBtn").click(function(){
 
 $("#infoBtn").mouseover(function(){
     $("#pop-up").fadeIn()
-    console.log("mouseover")
-    //$("#pop-up").animate({visibility: 'visible', opacity: '1.0'});
 })
 $("#infoBtn").mouseout(function(){
     $("#pop-up").fadeOut();
-    console.log("mouseout")
-    //$("#pop-up").animate({opacity: '0'});
 })
